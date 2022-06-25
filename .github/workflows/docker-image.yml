@@ -33,11 +33,10 @@ jobs:
       
       - name: Extract metadata (tags, labels) for Docker
         id: meta
-        uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
+        uses: docker/metadata-action@4
         with:
           images: iyuyue/docker-nginx
           tags: |
-            # set latest tag for default branch
             type=raw,value=latest,enable={{is_default_branch}}
       
       - name: Build and push Docker image
